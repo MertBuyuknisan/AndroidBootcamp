@@ -12,6 +12,10 @@ fun main(){
     numberOfa("Adana")
     val sumOfInteriorAngle= calculateInteriorAngle(4)
     println("Sum of Interior Angle: $sumOfInteriorAngle")
+    val calculateLimit= calculateLimit(60)
+    println("Total price: $calculateLimit")
+    val calculateSalarty= calculateSalary(25)
+    println(calculateSalarty)
 }
 fun celsiusToFahrenheit(celsius:Double):Double{
     val fahrenheit=(celsius*1.8)+32
@@ -40,6 +44,33 @@ fun numberOfa(word:String){
 fun calculateInteriorAngle(numberOfEdges:Int):Int{
    val sumOfInteriorAngle=(numberOfEdges-2)*180
     return sumOfInteriorAngle
+}
+fun calculateSalary(dayCount:Int):Int{
+    val totalHours=dayCount*8
+    val normalSaatSiniri=160
+    val normalSaatUcreti=10
+    val mesaiSaatUcreti=20
+    if(totalHours<normalSaatSiniri){
+        return totalHours*normalSaatUcreti
+    }
+    else{
+        val normalUcret = normalSaatSiniri * normalSaatUcreti
+        val mesaiSaati = totalHours - normalSaatSiniri
+        val mesaiUcret = mesaiSaati * mesaiSaatUcreti
+         return normalUcret + mesaiUcret
+    }
+
+}
+fun calculateLimit(gbUsed:Int):Int{
+    val limit=50
+    val basePrice=100
+    val overageFee=4
+    if(gbUsed<=limit){
+        return basePrice
+    }
+    else{
+        return basePrice+(gbUsed-limit)*4
+    }
 }
 
 
